@@ -10,9 +10,10 @@ HOW TO INSTALL
 
 1. Check out from github
 
-        $ git clone https://github.com/groenewege/vimrc ~/.vim
+        $ git clone https://github.com/groenewege/vimrc.git ~/.vim
         $ cd ~/.vim
-        $ git submodule update --init
+        $ git submodule init
+        $ git submodule update
 
 2. Install ~/.vimrc and ~/.gvimrc
 
