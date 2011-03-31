@@ -25,6 +25,8 @@ PLUGINS
 
 * [Nerd Tree](http://www.vim.org/scripts/script.php?script_id=1658): A tree explorer plugin for navigating the filesystem.
 
+* [Nerd Commenter](http://www.vim.org/scripts/script.php?script_id=1218): A plugin that allows for easy commenting of code for many filetypes. 
+
 * [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540): TextMate-style snippets for Vim
 
 * [Ack](http://www.vim.org/scripts/script.php?script_id=2572): This plugin will allow you to run ack from vim, and shows the results in a split window. 
@@ -37,7 +39,7 @@ PLUGINS
 
 * [Vim-twig](https://github.com/beyondwords/vim-twig): Twig syntax highlighting, snipMate, etc.
 
-* [Unimpaired](http://www.vim.org/scripts/script.php?script_id=1590): complementary pairs of mappings. (insert empty lines, duplicate lines, encode/decode)
+* [Unimpaired](http://www.vim.org/scripts/script.php?script_id=1590): Pairs of handy bracket mappings . (insert empty lines, duplicate lines, encode/decode)
 
 * [Vim-peepopen](https://github.com/topfunky/PeepOpen-EditorSupport): Editor-specific plugins for the PeepOpen file chooser application.
 
