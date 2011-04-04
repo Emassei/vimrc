@@ -191,7 +191,7 @@ noremap <silent> <C-TAB> :LustyJuggler<CR>
 " Sparkup configuration
 " ==============================================================================
 
-let g:sparkupNextMapping = '<c-x>'
+let g:sparkupNextMapping = '<c-y>'
 
 
 " ==============================================================================
