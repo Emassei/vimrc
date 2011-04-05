@@ -171,8 +171,11 @@ nnoremap <leader>a :Ack<Space>
 nmap <leader>md :%!/usr/local/bin/markdown<CR>
 
 " Preview file in safari
-map <Leader>s :!open -a Safari %<CR><CR>
+map <leader>s :!open -a Safari %<CR><CR>
 
+" surround with strong or em tags
+map <leader>b lbi<strong><Esc>ea</strong><Esc>
+map <leader>i lbi<em><Esc>ea</em><Esc>
 
 " ==============================================================================
 " Abreviations
