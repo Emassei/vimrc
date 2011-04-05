@@ -65,8 +65,8 @@ set termencoding=utf-8
 set encoding=utf-8
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in
-"set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n
-set statusline=%<%f\ %h%m%r\ Buf:\ #%n%=%-14.(%l,%c%V%)\ %P
+set ch=2                        " Make command line two lines high
+set statusline=%<%f\ %h%m%r\ Buf:\ #%n%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)
 
 
 " ==============================================================================
