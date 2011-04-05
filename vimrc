@@ -167,6 +167,21 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 " Run Ack fast
 nnoremap <leader>a :Ack<Space>
 
+" Convert markdown to html
+nmap <leader>md :%!/usr/local/bin/markdown<CR>
+
+" Preview file in safari
+map <Leader>s :!open -a Safari %<CR><CR>
+
+
+" ==============================================================================
+" Abreviations
+" ==============================================================================
+
+ab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+ab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+ab lllorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 " ==============================================================================
 " NERDTree settings
