@@ -50,7 +50,7 @@ set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set gdefault                    " search/replace "globally" (on a line) by default
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
 
 " regex fix
 nnoremap / /\v
@@ -160,6 +160,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" Shortcut to rapidly toggle hidden caracters
+nmap <leader>l :set list!<CR>
 
 " Strip all trailing whitespace from a file, using ,w
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
@@ -176,6 +178,10 @@ map <leader>s :!open -a Safari %<CR><CR>
 " surround with strong or em tags
 map <leader>b lbi<strong><Esc>ea</strong><Esc>
 map <leader>i lbi<em><Esc>ea</em><Esc>
+
+" space as pagedown like web browser 
+nmap <space> <pagedown>
+
 
 " ==============================================================================
 " Abreviations
@@ -218,6 +224,15 @@ let g:sparkupNextMapping = '<c-y>'
 
 " Shift Key
 if has("gui_macvim")
-  let macvim_hig_shift_movement = 1
+    let macvim_hig_shift_movement = 1
+endif
+
+
+" ==============================================================================
+" Filetype specific handling
+" ==============================================================================
+
+if has("autocmd")
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
