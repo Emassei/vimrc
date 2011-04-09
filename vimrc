@@ -16,8 +16,8 @@ set nocompatible
 " Use pathogen to easily modify the runtime path to include all plugins under
 " the ~/.vim/bundle directory
 filetype off                    " force reloading *after* pathogen loaded
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Change the mapleader from \ to ,
@@ -66,7 +66,7 @@ set encoding=utf-8
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in
 set ch=2                        " Make command line two lines high
-set statusline=%<%f\ %h%m%r\ Buf:\ #%n%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)
 
 
 " ==============================================================================
@@ -94,6 +94,7 @@ set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
 set nomodeline                  " disable mode lines (security measure)
 set ttyfast                     " always use a fast terminal
+set foldlevelstart=99           " open all folds on opening file
 
 
 " ==============================================================================
@@ -117,6 +118,26 @@ endif
 au filetype help set nonumber      " no line numbers when viewing help
 au filetype help nnoremap <buffer><CR> <C-]>   " Enter selects subject
 au filetype help nnoremap <buffer><BS> <C-T>   " Backspace to go back
+
+
+" ==============================================================================
+" PHP settings
+" ==============================================================================
+
+function! PhpDocLoad()
+   so $HOME/.vim/php-doc.vim
+   inoremap <C-P><ESC> :call PhpDocSingle()<CR>i
+   nnoremap <C-P> :call PhpDocSingle()<CR>
+   vnoremap <C-P> :call PhpDocRange()<CR>
+   inoremap ( ()<Left>
+endfunction
+
+let php_sql_query=1
+let php_htmlInStrings=1
+let php_folding=1
+let php_parent_error_close=1
+let php_parent_error_open=1
+autocmd BufNewFile,BufRead *.php call PhpDocLoad()
 
 
 " ==============================================================================

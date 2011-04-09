@@ -48,3 +48,5 @@ PLUGINS
 
 * [vim-Fugitive](http://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper so awesome, it should be illegal.
 
+* [phpDocumentor](http://www.vim.org/scripts/script.php?script_id=1355): Provides really comfortable generation of phpDocumentor doc blocks for PHP4 and PHP5.
+
