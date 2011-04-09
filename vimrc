@@ -94,7 +94,6 @@ set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
 set nomodeline                  " disable mode lines (security measure)
 set ttyfast                     " always use a fast terminal
-" set cursorline                " underline the current line, for quick orientation
 
 
 " ==============================================================================
@@ -196,8 +195,8 @@ ab lllorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius
 " NERDTree settings
 " ==============================================================================
 
-" Put focus to the NERD Tree with F3 (tricked by quickly closing it and
-" immediately showing it again, since there is no :NERDTreeFocus command)
+let NERDTreeChDirMode=2
+let NERDTreeQuitOnOpen=1
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>N :NERDTreeClose<CR>
 

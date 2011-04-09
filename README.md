@@ -46,5 +46,5 @@ PLUGINS
 
 * [Surround](http://www.vim.org/scripts/script.php?script_id=1697): Delete/change/add parentheses/quotes/XML-tags/much more with ease.
 
-
+* [vim-Fugitive](http://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper so awesome, it should be illegal.
 
