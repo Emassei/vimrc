@@ -50,3 +50,5 @@ PLUGINS
 
 * [phpDocumentor](http://www.vim.org/scripts/script.php?script_id=1355): Provides really comfortable generation of phpDocumentor doc blocks for PHP4 and PHP5.
 
+* [Taglist](http://vim.sourceforge.net/scripts/script.php?script_id=273): Source code browser
+

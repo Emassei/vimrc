@@ -132,6 +132,15 @@ function! PhpDocLoad()
    inoremap ( ()<Left>
 endfunction
 
+" Loads a tag file from ~/.vim.tags/, based on the argument provided. The
+" command "Ltag"" is mapped to this function.
+function! LoadTags(file)
+   let tagspath = $HOME . "/.vim.tags/" . a:file
+   let tagcommand = 'set tags+=' . tagspath
+   execute tagcommand
+endfunction
+command! -nargs=1 Ltag :call LoadTags("<args>")
+
 let php_sql_query=1
 let php_htmlInStrings=1
 let php_folding=1
@@ -148,13 +157,12 @@ autocmd BufNewFile,BufRead *.php call PhpDocLoad()
 ino jj <esc>
 cno jj <c-c>
 
+" Show current tag under the cursor
+nnoremap <leader>t <C-]>
+nnoremap <leader>st <C-w><C-]>
+
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
-
-" Use Q for formatting the current paragraph (or visual selection)
-vmap Q gq
-nmap Q gqap
-
 
 " Use the damn hjkl keys
 map <up> <nop>
@@ -181,7 +189,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Shortcut to rapidly toggle hidden caracters
-nmap <leader>l :set list!<CR>
+nmap <leader>h :set list!<CR>
 
 " Strip all trailing whitespace from a file, using ,w
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
@@ -220,6 +228,24 @@ let NERDTreeChDirMode=2
 let NERDTreeQuitOnOpen=1
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>N :NERDTreeClose<CR>
+
+
+" ==============================================================================
+" Taglist settings
+" ==============================================================================
+
+nmap <leader>l :TlistToggle<CR>
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fild_Auto_Close = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_Close_On_Select = 1
+let Tlist_Process_File_Always = 1
+let Tlist_Display_Prototype = 0
+let Tlist_Display_Tag_Scope = 1
 
 
 " ==============================================================================
