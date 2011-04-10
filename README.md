@@ -52,3 +52,5 @@ PLUGINS
 
 * [Taglist](http://vim.sourceforge.net/scripts/script.php?script_id=273): Source code browser
 
+* [Vim-symfony](https://github.com/soh335/vim-symfony/wiki): Improve your symfony project
+

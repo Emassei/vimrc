@@ -46,3 +46,7 @@
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 	ignore = untracked 
+[submodule "bundle/vim-symfony"]
+	path = bundle/vim-symfony
+	url = https://github.com/soh335/vim-symfony.git
+	ignore = untracked 

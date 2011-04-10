@@ -188,6 +188,11 @@ nnoremap <leader>w <C-w>v<C-w>l
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Open file in current directory
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :vsp %%
+
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
@@ -227,6 +232,7 @@ ab lllorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius
 " NERDTree settings
 " ==============================================================================
 
+let NERDChristmasTree=1
 let NERDTreeChDirMode=2
 let NERDTreeQuitOnOpen=1
 nmap <leader>n :NERDTreeToggle<CR>
