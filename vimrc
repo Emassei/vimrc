@@ -161,6 +161,9 @@ cno jj <c-c>
 nnoremap <leader>t <C-]>
 nnoremap <leader>st <C-w><C-]>
 
+" Open omnicomplete menu
+inoremap <C-space> <C-x><C-o>
+
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
@@ -235,7 +238,19 @@ nmap <leader>N :NERDTreeClose<CR>
 " ==============================================================================
 
 nmap <leader>l :TlistToggle<CR>
+nmap <leader>L :TlistClose<CR>
+" TagListTagName - Used for tag names
+highlight MyTagListTagName gui=bold guifg=Black guibg=Orange
+" TagListTagScope - Used for tag scope
+highlight MyTagListTagScope gui=NONE guifg=Blue
+" TagListTitle - Used for tag titles
+highlight MyTagListTitle gui=bold guifg=DarkRed guibg=LightGray
+" TagListComment - Used for comments
+highlight MyTagListComment guifg=DarkGreen
+" TagListFileName - Used for filenames
+highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_Enable_Fold_Column = 0
 let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
