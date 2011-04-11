@@ -66,7 +66,14 @@ set encoding=utf-8
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in
 set ch=2                        " Make command line two lines high
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)
+if has('statusline')
+    set statusline=%<%f\   " Filename
+    set statusline+=%w%h%m%r " Options
+    set statusline+=%{fugitive#statusline()} "  Git Hotness
+    set statusline+=\ [%{&ff}/%Y]            " filetype
+    set statusline+=\ [%{getcwd()}]          " current dir
+    set statusline+=%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)  " Right aligned file nav info
+endif
 
 
 " ==============================================================================
@@ -132,6 +139,14 @@ function! PhpDocLoad()
    inoremap ( ()<Left>
 endfunction
 
+autocmd BufNewFile,BufRead *.php call PhpDocLoad()
+
+let php_sql_query=1
+let php_htmlInStrings=1
+let php_folding=1
+let php_parent_error_close=1
+let php_parent_error_open=1
+
 " Loads a tag file from ~/.vim.tags/, based on the argument provided. The
 " command "Ltag"" is mapped to this function.
 function! LoadTags(file)
@@ -140,13 +155,6 @@ function! LoadTags(file)
    execute tagcommand
 endfunction
 command! -nargs=1 Ltag :call LoadTags("<args>")
-
-let php_sql_query=1
-let php_htmlInStrings=1
-let php_folding=1
-let php_parent_error_close=1
-let php_parent_error_open=1
-autocmd BufNewFile,BufRead *.php call PhpDocLoad()
 
 
 " ==============================================================================
@@ -188,10 +196,17 @@ nnoremap <leader>w <C-w>v<C-w>l
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Change Working Directory to that of the current file
+cmap cwd lcd %:p:h
+cmap cd. lcd %:p:h
+
 " Open file in current directory
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>ew :e %%
 map <leader>es :vsp %%
+
+" Expand to local webserver root
+cnoremap ## <C-R>='/Library/Webserver/Documents/'<cr>
 
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -223,9 +238,8 @@ nmap <space> <pagedown>
 " Abreviations
 " ==============================================================================
 
-ab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-ab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-ab lllorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ab GG Gunther Groenewege
+ab "= " ==============================================================================
 
 
 " ==============================================================================
@@ -237,6 +251,7 @@ let NERDTreeChDirMode=2
 let NERDTreeQuitOnOpen=1
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>N :NERDTreeClose<CR>
+map <leader>f :NERDTreeFind<CR>
 
 
 " ==============================================================================
@@ -267,6 +282,16 @@ let Tlist_Close_On_Select = 1
 let Tlist_Process_File_Always = 1
 let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
+
+
+" ============================================================================== 
+" Snipmate settings
+" ============================================================================== 
+
+let g:snips_author = 'Gunther Groenewege' 
+let g:snippets_dir = $HOME . "/.vim/snippets/"
+" Shortcut for reloading snippets, useful when developing
+nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 
 
 " ==============================================================================

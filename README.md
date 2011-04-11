@@ -54,3 +54,5 @@ PLUGINS
 
 * [Vim-symfony](https://github.com/soh335/vim-symfony/wiki): Improve your symfony project
 
+* [delimitMate](http://www.vim.org/scripts/script.php?script_id=2754): Provides auto-balancing and some expansions for parens, quotes, etc. 
+

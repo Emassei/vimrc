@@ -50,3 +50,7 @@
 	path = bundle/vim-symfony
 	url = https://github.com/soh335/vim-symfony.git
 	ignore = untracked 
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+	ignore = untracked 
