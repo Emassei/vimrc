@@ -1,4 +1,4 @@
-"
+ 
 " Personal preference .vimrc file
 " Gunther Groenewege
 " based upon the file by Vincent Driessen
@@ -137,7 +137,7 @@ let php_folding=1
 let php_parent_error_close=1
 let php_parent_error_open=1
 
-" ctrl-p pour commenter une fonction php
+" ctrl-p to comment php code
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
@@ -285,8 +285,10 @@ let Tlist_Display_Tag_Scope = 1
 
 let g:snips_author = 'Gunther Groenewege' 
 let g:snippets_dir = $HOME . "/.vim/snippets/"
+" Use HTML and PHP snippets in .php files
+au BufRead,BufNewFile *.php set ft=php.html
 " Shortcut for reloading snippets, useful when developing
-nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
+nnoremap <leader>r <esc>:exec ReloadAllSnippets()<cr>
 
 
 " ==============================================================================
