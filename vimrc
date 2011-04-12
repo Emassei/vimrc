@@ -131,21 +131,16 @@ au filetype help nnoremap <buffer><BS> <C-T>   " Backspace to go back
 " PHP settings
 " ==============================================================================
 
-function! PhpDocLoad()
-   so $HOME/.vim/php-doc.vim
-   inoremap <C-P><ESC> :call PhpDocSingle()<CR>i
-   nnoremap <C-P> :call PhpDocSingle()<CR>
-   vnoremap <C-P> :call PhpDocRange()<CR>
-   inoremap ( ()<Left>
-endfunction
-
-autocmd BufNewFile,BufRead *.php call PhpDocLoad()
-
 let php_sql_query=1
 let php_htmlInStrings=1
 let php_folding=1
 let php_parent_error_close=1
 let php_parent_error_open=1
+
+" ctrl-p pour commenter une fonction php
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR> 
 
 " Loads a tag file from ~/.vim.tags/, based on the argument provided. The
 " command "Ltag"" is mapped to this function.
