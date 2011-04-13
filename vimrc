@@ -46,7 +46,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set smarttab                    " insert tabs on the start of a line according to
                                 "    shiftwidth, not tabstop
 set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
-set virtualedit=all             " allow the cursor to go in to "invalid" places
+"set virtualedit=all             " allow the cursor to go in to invalid places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set gdefault                    " search/replace "globally" (on a line) by default
@@ -55,6 +55,10 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
 " regex fix
 nnoremap / /\v
 vnoremap / /\v
+
+" folding settings
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
 
 
 " ==============================================================================
@@ -101,7 +105,6 @@ set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
 set nomodeline                  " disable mode lines (security measure)
 set ttyfast                     " always use a fast terminal
-set foldlevelstart=99           " open all folds on opening file
 
 
 " ==============================================================================
@@ -138,9 +141,9 @@ let php_parent_error_close=1
 let php_parent_error_open=1
 
 " ctrl-p to comment php code
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR> 
+inoremap <silent> <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <silent> <C-P> :call PhpDocSingle()<CR>
+vnoremap <silent> <C-P> :call PhpDocRange()<CR> 
 
 " Loads a tag file from ~/.vim.tags/, based on the argument provided. The
 " command "Ltag"" is mapped to this function.
@@ -151,6 +154,15 @@ function! LoadTags(file)
 endfunction
 command! -nargs=1 Ltag :call LoadTags("<args>")
 
+" Load a project : change directory - load tags - show nerdtree
+function! LoadProject(name)
+    let projectpath = "/Library/Webserver/Documents/" . a:name
+    let cdcommand = 'cd ' . projectpath
+    execute cdcommand
+    call LoadTags(a:name)
+    NERDTree
+endfunction
+command! -nargs=1 Project : call LoadProject("<args>")
 
 " ==============================================================================
 " Shortcut mappings
@@ -160,21 +172,24 @@ command! -nargs=1 Ltag :call LoadTags("<args>")
 ino jj <esc>
 cno jj <c-c>
 
-" Show current tag under the cursor
-nnoremap <leader>t <C-]>
-nnoremap <leader>st <C-w><C-]>
+" Show current tag for word under the cursor
+nnoremap <silent> <leader>t <C-]>
+nnoremap <silent> <leader>st <C-w><C-]>
+" Show current tag list for word under the cursor
+nnoremap <silent> <leader>tj g<C-]>
+nnoremap <silent> <leader>stj <C-w>g<C-]>
 
 " Open omnicomplete menu
-inoremap <C-space> <C-x><C-o>
+inoremap <silent> <C-space> <C-x><C-o>
 
 " Quickly close the current window
-nnoremap <leader>q :q<CR>
+nnoremap <silent> <leader>q :q<CR>
 
 " Use the damn hjkl keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 " Remap j and k to act as expected when used on long, wrapped, lines
 nnoremap j gj
@@ -191,14 +206,12 @@ nnoremap <leader>w <C-w>v<C-w>l
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Change Working Directory to that of the current file
-cmap cwd lcd %:p:h
-cmap cd. lcd %:p:h
-
 " Open file in current directory
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>ew :e %%
-map <leader>es :vsp %%
+map <silent> <leader>ew :e %%
+map <silent> <leader>es :vsp %%
+" Change directory to directory of current file
+map <silent> <leader>cd :cd %% <CR>
 
 " Expand to local webserver root
 cnoremap ## <C-R>='/Library/Webserver/Documents/'<cr>
@@ -207,23 +220,23 @@ cnoremap ## <C-R>='/Library/Webserver/Documents/'<cr>
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Shortcut to rapidly toggle hidden caracters
-nmap <leader>h :set list!<CR>
+nmap <silent> <leader>h :set list!<CR>
 
 " Strip all trailing whitespace from a file, using ,w
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+nnoremap <silent> <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
 " Run Ack fast
-nnoremap <leader>a :Ack<Space>
+nnoremap <silent> <leader>a :Ack<Space>
 
 " Convert markdown to html
-nmap <leader>md :%!/usr/local/bin/markdown<CR>
+nmap <silent> <leader>md :%!/usr/local/bin/markdown<CR>
 
 " Preview file in safari
-map <leader>s :!open -a Safari %<CR><CR>
+map <silent> <leader>s :!open -a Safari %<CR><CR>
 
 " surround with strong or em tags
-map <leader>b lbi<strong><Esc>ea</strong><Esc>
-map <leader>i lbi<em><Esc>ea</em><Esc>
+map <silent> <leader>b lbi<strong><Esc>ea</strong><Esc>
+map <silent> <leader>i lbi<em><Esc>ea</em><Esc>
 
 " space as pagedown like web browser 
 nmap <space> <pagedown>
@@ -244,17 +257,17 @@ ab "= " ========================================================================
 let NERDChristmasTree=1
 let NERDTreeChDirMode=2
 let NERDTreeQuitOnOpen=1
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>N :NERDTreeClose<CR>
-map <leader>f :NERDTreeFind<CR>
+nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>N :NERDTreeClose<CR>
+nmap <silent> <leader>f :NERDTreeFind<CR>
 
 
 " ==============================================================================
 " Taglist settings
 " ==============================================================================
 
-nmap <leader>l :TlistToggle<CR>
-nmap <leader>L :TlistClose<CR>
+nmap <silent> <leader>l :TlistToggle<CR>
+nmap <silent> <leader>L :TlistClose<CR>
 " TagListTagName - Used for tag names
 highlight MyTagListTagName gui=bold guifg=Black guibg=Orange
 " TagListTagScope - Used for tag scope
@@ -266,6 +279,7 @@ highlight MyTagListComment guifg=DarkGreen
 " TagListFileName - Used for filenames
 highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
@@ -277,6 +291,7 @@ let Tlist_Close_On_Select = 1
 let Tlist_Process_File_Always = 1
 let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
+let tlist_php_settings = 'php;c:class;f:Functions'
 
 
 " ============================================================================== 
@@ -286,9 +301,9 @@ let Tlist_Display_Tag_Scope = 1
 let g:snips_author = 'Gunther Groenewege' 
 let g:snippets_dir = $HOME . "/.vim/snippets/"
 " Use HTML and PHP snippets in .php files
-au BufRead,BufNewFile *.php set ft=php.html
+nmap <silent> <leader>ph :set filetype=php.html<CR>
 " Shortcut for reloading snippets, useful when developing
-nnoremap <leader>r <esc>:exec ReloadAllSnippets()<cr>
+nnoremap <silent> <leader>r <esc>:exec ReloadAllSnippets()<cr>
 
 
 " ==============================================================================
