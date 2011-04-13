@@ -209,6 +209,13 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap j gj
 nnoremap k gk
 
+" Bubble single lines
+nmap <leader><Up> ddkP
+nmap <leader><Down> ddp
+" Bubble multiple lines
+vmap <leader><Up> xkP`[V`]
+vmap <leader><Down> xp`[V`]
+
 " wrap text
 command! -nargs=* Wrap set wrap linebreak nolist
 
