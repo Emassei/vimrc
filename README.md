@@ -60,3 +60,7 @@ PLUGINS
 
 * [HexHighlight](http://www.vim.org/scripts/script.php?script_id=2937): Plugin to highlight hex codes in gvim
 
+* [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment
+
+* [gundo](http://sjl.bitbucket.org/gundo.vim/): Graph your Vim undo tree in style
+
