@@ -58,3 +58,5 @@ PLUGINS
 
 * [vim-markdown-preview](https://github.com/nelstrom/vim-markdown-preview): preview markdown documents in the browser from vim
 
+* [HexHighlight](http://www.vim.org/scripts/script.php?script_id=2937): Plugin to highlight hex codes in gvim
+

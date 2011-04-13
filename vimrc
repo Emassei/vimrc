@@ -119,6 +119,20 @@ if &t_Co > 2 || has("gui_running")
   syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
 
+" Show syntax highlighting groups for word under cursor
+nmap <leader>sh :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+"HexHighlight plugin
+if exists('*HexHighlight()')
+  nmap <leader>c :call HexHighlight()<CR>
+endif
+
 
 " ==============================================================================
 " Filetypes
@@ -208,6 +222,10 @@ nnoremap <leader>w <C-w>v<C-w>l
 " Edit the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 " Open file in current directory
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
