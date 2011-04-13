@@ -112,7 +112,7 @@ set ttyfast                     " always use a fast terminal
 " ==============================================================================
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme wombat
+  colorscheme wombat2
 endif
 
 if &t_Co > 2 || has("gui_running")
