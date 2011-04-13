@@ -112,7 +112,7 @@ set ttyfast                     " always use a fast terminal
 " ==============================================================================
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme wombat2
+  colorscheme lucius
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -297,15 +297,11 @@ nmap <silent> <leader>f :NERDTreeFind<CR>
 nmap <silent> <leader>l :TlistToggle<CR>
 nmap <silent> <leader>L :TlistClose<CR>
 " TagListTagName - Used for tag names
-highlight MyTagListTagName gui=bold guifg=Black guibg=Orange
-" TagListTagScope - Used for tag scope
-highlight MyTagListTagScope gui=NONE guifg=Blue
+highlight MyTagListTagName gui=italic guifg=#cc0000 guibg=#f0dfaf
 " TagListTitle - Used for tag titles
-highlight MyTagListTitle gui=bold guifg=DarkRed guibg=LightGray
-" TagListComment - Used for comments
-highlight MyTagListComment guifg=DarkGreen
+highlight MyTagListTitle gui=italic guifg=#333333 guibg=#cca3b3
 " TagListFileName - Used for filenames
-highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
+highlight MyTagListFileName gui=bold guifg=#000000 guibg=#b3d38c
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
