@@ -1,4 +1,4 @@
- 
+
 " Personal preference .vimrc file
 " Gunther Groenewege
 " based upon the file by Vincent Driessen
@@ -42,9 +42,9 @@ set number                      " always show line numbers
 set showmatch                   " set show matching parenthesis
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
-                                "    case-sensitive otherwise
+"    case-sensitive otherwise
 set smarttab                    " insert tabs on the start of a line according to
-                                "    shiftwidth, not tabstop
+"    shiftwidth, not tabstop
 set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
 "set virtualedit=all             " allow the cursor to go in to invalid places
 set hlsearch                    " highlight search terms
@@ -71,12 +71,12 @@ set lazyredraw                  " don't update the display while executing macro
 set laststatus=2                " tell VIM to always put a status line in
 set ch=2                        " Make command line two lines high
 if has('statusline')
-    set statusline=%<%f\   " Filename
-    set statusline+=%w%h%m%r " Options
-    set statusline+=%{fugitive#statusline()} "  Git Hotness
-    set statusline+=\ [%{&ff}/%Y]            " filetype
-    set statusline+=\ [%{getcwd()}]          " current dir
-    set statusline+=%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)  " Right aligned file nav info
+  set statusline=%<%f\   " Filename
+  set statusline+=%w%h%m%r " Options
+  set statusline+=%{fugitive#statusline()} "  Git Hotness
+  set statusline+=\ [%{&ff}/%Y]            " filetype
+  set statusline+=\ [%{getcwd()}]          " current dir
+  set statusline+=%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)  " Right aligned file nav info
 endif
 
 
@@ -85,19 +85,19 @@ endif
 " ==============================================================================
 
 set hidden                      " hide buffers instead of closing them this
-                                "    means that the current buffer can be put
-                                "    to background without being written; and
-                                "    that marks and undo history are preserved
+"    means that the current buffer can be put
+"    to background without being written; and
+"    that marks and undo history are preserved
 set switchbuf=useopen           " reveal already opened files from the
-                                " quickfix window instead of opening new
-                                " buffers
+" quickfix window instead of opening new
+" buffers
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 set backupdir=~/.vim/backup		" swap files
 set directory=~/.vim/backup
 set wildmenu                    " make tab completion for files/buffers act like bash
 set wildmode=list:full          " show a list when pressing tab and complete
-                                "    first full match
+"    first full match
 set wildignore+=.git,.svn
 set title                       " change the terminal's title
 set visualbell                  " don't beep
@@ -112,11 +112,11 @@ set ttyfast                     " always use a fast terminal
 " ==============================================================================
 
 if &t_Co >= 256 || has("gui_running")
-   colorscheme wombat
+  colorscheme wombat
 endif
 
 if &t_Co > 2 || has("gui_running")
-   syntax on                    " switch syntax highlighting on, when the terminal has colors
+  syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
 
 
@@ -148,19 +148,19 @@ vnoremap <silent> <C-P> :call PhpDocRange()<CR>
 " Loads a tag file from ~/.vim.tags/, based on the argument provided. The
 " command "Ltag"" is mapped to this function.
 function! LoadTags(file)
-   let tagspath = $HOME . "/.vim.tags/" . a:file
-   let tagcommand = 'set tags+=' . tagspath
-   execute tagcommand
+  let tagspath = $HOME . "/.vim.tags/" . a:file
+  let tagcommand = 'set tags+=' . tagspath
+  execute tagcommand
 endfunction
 command! -nargs=1 Ltag :call LoadTags("<args>")
 
 " Load a project : change directory - load tags - show nerdtree
 function! LoadProject(name)
-    let projectpath = "/Library/Webserver/Documents/" . a:name
-    let cdcommand = 'cd ' . projectpath
-    execute cdcommand
-    call LoadTags(a:name)
-    NERDTree
+  let projectpath = "/Library/Webserver/Documents/" . a:name
+  let cdcommand = 'cd ' . projectpath
+  execute cdcommand
+  call LoadTags(a:name)
+  NERDTree
 endfunction
 command! -nargs=1 Project : call LoadProject("<args>")
 
@@ -195,6 +195,9 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap j gj
 nnoremap k gk
 
+" wrap text
+command! -nargs=* Wrap set wrap linebreak nolist
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -228,8 +231,8 @@ nnoremap <silent> <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 " Run Ack fast
 nnoremap <silent> <leader>a :Ack<Space>
 
-" Convert markdown to html
-nmap <silent> <leader>md :%!/usr/local/bin/markdown<CR>
+" Preview markdown documents in the browser from vim
+nmap <silent> <leader>md :Mm<CR>
 
 " Preview file in safari
 map <silent> <leader>s :!open -a Safari %<CR><CR>
@@ -292,6 +295,7 @@ let Tlist_Process_File_Always = 1
 let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
 let tlist_php_settings = 'php;c:class;f:Functions'
+let tlist_markdown_settings='markdown;h:Headings'
 
 
 " ============================================================================== 
@@ -309,7 +313,7 @@ nnoremap <silent> <leader>r <esc>:exec ReloadAllSnippets()<cr>
 " ==============================================================================
 " Lusty-Jugller settings
 " ==============================================================================
-                               
+
 let g:LustyJugglerAltTabMode = 1
 let g:LustyJugglerSuppressRubyWarning = 1
 noremap <silent> <C-TAB> :LustyJuggler<CR>
@@ -328,7 +332,7 @@ let g:sparkupNextMapping = '<c-y>'
 
 " Shift Key
 if has("gui_macvim")
-    let macvim_hig_shift_movement = 1
+  let macvim_hig_shift_movement = 1
 endif
 
 
@@ -337,6 +341,8 @@ endif
 " ==============================================================================
 
 if has("autocmd")
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  au BufNewFile,BufRead *.less set filetype=less
+  autocmd FileType html,css,less,yaml,vim setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType markdown setlocal wrap linebreak nolist
 endif
 

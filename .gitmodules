@@ -14,10 +14,6 @@
 	path = bundle/lusty-juggler
 	url = https://github.com/sjbach/lusty.git
 	ignore = untracked 
-[submodule "bundle/markdown"]
-	path = bundle/markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-	ignore = untracked 
 [submodule "bundle/sparkup"]
 	path = bundle/sparkup
 	url = https://github.com/kogakure/vim-sparkup.git
@@ -53,4 +49,12 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+	ignore = untracked 
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+	ignore = untracked 
+[submodule "bundle/vim-markdown-preview"]
+	path = bundle/vim-markdown-preview
+	url = https://github.com/nelstrom/vim-markdown-preview.git
 	ignore = untracked 

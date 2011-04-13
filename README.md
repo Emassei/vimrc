@@ -34,8 +34,6 @@ PLUGINS
 
 * [LustyJuggler](http://www.vim.org/scripts/script.php?script_id=2050): LustyJuggler is a high speed buffer switcher.
 
-* [Markdown](http://www.vim.org/scripts/script.php?script_id=1242): A syntax file for the Markdown text-to-HTML tool.
-
 * [Sparkup](https://github.com/rstacruz/sparkup): A parser for a condensed HTML format, inspired by Zen coding.
 
 * [Vim-twig](https://github.com/beyondwords/vim-twig): Twig syntax highlighting, snipMate, etc.
@@ -55,4 +53,8 @@ PLUGINS
 * [Vim-symfony](https://github.com/soh335/vim-symfony/wiki): Improve your symfony project
 
 * [delimitMate](http://www.vim.org/scripts/script.php?script_id=2754): Provides auto-balancing and some expansions for parens, quotes, etc. 
+
+* [vim-markdown](https://github.com/tpope/vim-markdown): Vim Markdown runtime files
+
+* [vim-markdown-preview](https://github.com/nelstrom/vim-markdown-preview): preview markdown documents in the browser from vim
 
