@@ -1,12 +1,10 @@
-Groenewege vim configuration
-============================
+# Groenewege vim configuration #
 
 Author: Gunther Groenewege
 
 Fork me on GITHUB  https://github.com/groenewege/vimrc
 
-HOW TO INSTALL
---------------
+## HOW TO INSTALL ##
 
 1. Check out from github
 
@@ -19,8 +17,7 @@ HOW TO INSTALL
 
         $ ./install-vimrc.sh
 
-PLUGINS
--------
+## PLUGINS ##
 
 * [Pathogen](http://www.vim.org/scripts/script.php?script_id=2332): Pathogen let us install a plugin as a bundle in ~/.vim/bundle seprately.
 
