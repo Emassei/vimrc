@@ -317,6 +317,9 @@ let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
 let tlist_php_settings = 'php;c:class;f:Functions'
 let tlist_markdown_settings='markdown;h:Headings'
+let tlist_css_settings='css;s:Selectors'
+let tlist_html_settings = 'html;h:Headers;o:Objects(ID);c:Classes'
+let tlist_xhtml_settings = 'html;h:Headers;o:Objects(ID);c:Classes'
 
 
 " ============================================================================== 
