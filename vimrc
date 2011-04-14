@@ -42,11 +42,11 @@ set number                      " always show line numbers
 set showmatch                   " set show matching parenthesis
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
-"    case-sensitive otherwise
+                                "    case-sensitive otherwise
 set smarttab                    " insert tabs on the start of a line according to
-"    shiftwidth, not tabstop
+                                "    shiftwidth, not tabstop
 set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
-"set virtualedit=all             " allow the cursor to go in to invalid places
+"set virtualedit=all            " allow the cursor to go in to invalid places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set gdefault                    " search/replace "globally" (on a line) by default
@@ -59,6 +59,34 @@ vnoremap / /\v
 " folding settings
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+ 
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
 
 
 " ==============================================================================
