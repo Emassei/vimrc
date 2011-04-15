@@ -49,7 +49,7 @@ set scrolloff=4                 " keep 4 lines off the edges of the screen when 
 "set virtualedit=all            " allow the cursor to go in to invalid places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
-set gdefault                    " search/replace "globally" (on a line) by default
+set gdefault                    " search/replace 'globally' (on a line) by default
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·,eol:¬
 
 " regex fix
@@ -102,9 +102,9 @@ if has('statusline')
   set statusline=%<%f\   " Filename
   set statusline+=%w%h%m%r " Options
   set statusline+=%{fugitive#statusline()} "  Git Hotness
-  set statusline+=\ [%{&ff}/%Y]            " filetype
+  set statusline+=\ [%Y]            " filetype
   set statusline+=\ [%{getcwd()}]          " current dir
-  set statusline+=%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)  " Right aligned file nav info
+  set statusline+=%=%-14.(line\ %l\ of\ %L\ -\ col\ %c%)  " Right aligned file nav info
 endif
 
 
@@ -133,14 +133,14 @@ set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
 set nomodeline                  " disable mode lines (security measure)
 set ttyfast                     " always use a fast terminal
-
+set clipboard=unnamed           " share with system clipboard
 
 " ==============================================================================
 " Highlighting
 " ==============================================================================
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme lucius
+  colorscheme molokai
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -158,7 +158,7 @@ endfunc
 
 "HexHighlight plugin
 if exists('*HexHighlight()')
-  nmap <leader>c :call HexHighlight()<CR>
+  nmap <C-c> :call HexHighlight()<CR>
 endif
 
 
@@ -325,11 +325,11 @@ nmap <silent> <leader>f :NERDTreeFind<CR>
 nmap <silent> <leader>l :TlistToggle<CR>
 nmap <silent> <leader>L :TlistClose<CR>
 " TagListTagName - Used for tag names
-highlight MyTagListTagName gui=italic guifg=#cc0000 guibg=#f0dfaf
+highlight MyTagListTagName gui=italic guifg=#f92672 guibg=#ffffff
 " TagListTitle - Used for tag titles
-highlight MyTagListTitle gui=italic guifg=#333333 guibg=#cca3b3
+highlight MyTagListTitle gui=italic guifg=#333333 guibg=#fd971f
 " TagListFileName - Used for filenames
-highlight MyTagListFileName gui=bold guifg=#000000 guibg=#b3d38c
+highlight MyTagListFileName gui=bold guifg=#000000 guibg=#a6e22e
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
@@ -389,7 +389,9 @@ nnoremap <silent> <leader>g :GundoToggle<CR>
 " Gist-vim settings
 " ============================================================================== 
 
-let g:gist_clip_command = 'pbcopy'
+if has('mac')
+    let g:gist_clip_command = 'pbcopy'
+endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
