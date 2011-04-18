@@ -62,3 +62,5 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 * [gundo](http://sjl.bitbucket.org/gundo.vim/): Graph your Vim undo tree in style
 
 * [Gist-vim](http://www.vim.org/scripts/script.php?script_id=2423): vimscript for gist
+
+* [PickAColor](http://www.vim.org/scripts/script.php?script_id=3026): Inserts and edits color codes using a Mac OS X or GTk color chooser, or a color name.

@@ -306,6 +306,8 @@ map <silent> <leader>i lbi<em><Esc>ea</em><Esc>
 " space as pagedown like web browser 
 nmap <space> <pagedown>
 
+" colorpicker
+map <silent> <leader>x :PickHEX<CR>
 
 " ==============================================================================
 " Abreviations

@@ -69,3 +69,7 @@
 [submodule "bundle/vim-markdown-preview"]
 	path = bundle/vim-markdown-preview
 	url = git@github.com:groenewege/vim-markdown-preview.git
+[submodule "bundle/pickacolor"]
+	path = bundle/pickacolor
+	url = https://github.com/Raimondi/PickAColor.git
+	ignore = untracked 
