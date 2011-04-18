@@ -69,4 +69,3 @@
 [submodule "bundle/vim-markdown-preview"]
 	path = bundle/vim-markdown-preview
 	url = git@github.com:groenewege/vim-markdown-preview.git
-	ignore = untracked 
