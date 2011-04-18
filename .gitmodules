@@ -66,3 +66,7 @@
 	path = bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
 	ignore = untracked 
+[submodule "bundle/vim-markdown-preview"]
+	path = bundle/vim-markdown-preview
+	url = git@github.com:groenewege/vim-markdown-preview.git
+	ignore = untracked 
