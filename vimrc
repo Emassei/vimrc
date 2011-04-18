@@ -135,11 +135,20 @@ set nomodeline                  " disable mode lines (security measure)
 set ttyfast                     " always use a fast terminal
 set clipboard=unnamed           " share with system clipboard
 
+" ============================================================================== 
+" Spelling
+" ============================================================================== 
+
+set spelllang=en,fr
+set spell
+set spellsuggest=5
+
 " ==============================================================================
 " Highlighting
 " ==============================================================================
 
 if &t_Co >= 256 || has("gui_running")
+  let g:molokai_original = 1
   colorscheme molokai
 endif
 
@@ -375,6 +384,7 @@ noremap <silent> <C-TAB> :LustyJuggler<CR>
 " Sparkup configuration
 " ==============================================================================
 
+" DEFAULT : let g:sparkupExecuteMapping = '<c-e>'
 let g:sparkupNextMapping = '<c-y>'
 
 
