@@ -165,11 +165,6 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-"HexHighlight plugin
-if exists('*HexHighlight()')
-  nmap <C-c> :call HexHighlight()<CR>
-endif
-
 
 " ==============================================================================
 " Filetypes
@@ -406,6 +401,15 @@ if has('mac')
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
+
+
+" ============================================================================== 
+" HexHighlight settings
+" <leader>F2
+" ============================================================================== 
+
+nmap <Leader>r <Plug>RefreshColorScheme
+
 
 " ==============================================================================
 " GUI
