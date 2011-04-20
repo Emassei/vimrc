@@ -81,10 +81,6 @@
 	path = bundle/hexHighlight
 	url = https://github.com/yurifury/hexHighlight.git
 	ignore = untracked 
-[submodule "bundle/PDV-revised"]
-	path = bundle/PDV-revised
-	url = https://github.com/vim-scripts/PDV-revised.git
-	ignore = untracked 
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
