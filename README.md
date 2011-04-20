@@ -43,7 +43,7 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [vim-Fugitive](http://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper so awesome, it should be illegal.
 
-* [PDV-revised](http://www.vim.org/scripts/script.php?script_id=2587): Provides really comfortable generation of phpDocumentor doc blocks. 
+* [PDV](http://www.vim.org/scripts/script.php?script_id=1355): Provides really comfortable generation of phpDocumentor doc blocks. 
 
 * [Taglist](http://vim.sourceforge.net/scripts/script.php?script_id=273): Source code browser
 
