@@ -279,7 +279,7 @@ cnoremap ## <C-R>='/Library/Webserver/Documents/'<cr>
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Shortcut to rapidly toggle hidden caracters
+" Shortcut to rapidly toggle hidden characters
 nmap <silent> <leader>h :set list!<CR>
 
 " Strip all trailing whitespace from a file, using ,w
@@ -303,6 +303,18 @@ nmap <space> <pagedown>
 
 " colorpicker
 map <silent> <leader>x :PickHEX<CR>
+
+" Underline the current line with dashes in normal mode
+nnoremap <F5> yyp<c-v>$r-
+
+" Underline the current line with dashes in insert mode
+inoremap <F5> <Esc>yyp<c-v>$r-A
+
+" Underline the current line with double dashes in normal mode
+nnoremap <F6> yyp<c-v>$r=
+
+" Underline the current line with double dashes in insert mode
+inoremap <F6> <Esc>yyp<c-v>$r=A
 
 " ==============================================================================
 " Abreviations
@@ -408,7 +420,7 @@ let g:gist_open_browser_after_post = 1
 " <leader>F2
 " ============================================================================== 
 
-nmap <Leader>r <Plug>RefreshColorScheme
+nmap <Leader>rc <Plug>RefreshColorScheme
 
 
 " ==============================================================================
