@@ -9,7 +9,7 @@
 *  GENERAL  *
 *************
 
-Cursor movement
+CURSOR MOVEMENT
 ===============
 
 h                   move left
@@ -43,7 +43,7 @@ tx                  search line forward before 'x'
 Tx                  search line backward before 'x'
 
 
-Bookmarks
+BOOKMARKS
 =========
 
 ma                  make a bookmark named a at the current cursor position
@@ -52,7 +52,7 @@ ma                  make a bookmark named a at the current cursor position
 `.                  go to the line that you last edited
 
 
-Insert mode
+INSERT MODE
 ===========
 
 i                   start insert mode at cursor
@@ -64,7 +64,7 @@ O                   open blank line above current line
 Esc                 exit insert mode
 
 
-Editing
+EDITING
 =======
 
 r                   replace a single character (does not use insert mode)
@@ -80,16 +80,19 @@ CTRL-r              redo
 .                   repeat last command
 ~                   switch case
 g~iw                switch case of current word
-guiw                make current word uppercase
+gUiw                make current word uppercase
 guiw                make current word lowercase
+gU$                 make uppercase until end of line
+gu$                 make lowercase until end of line
 >>                  indent line one column to right
 <<                  indent line one column to left
 ==                  auto-indent current line
 ddp                 swap current line with next
 ddkp                swap current line with previous
+:%retab             fix spaces / tabs issues in whole file
 
 
-Cut and paste
+CUT AND PASTE
 =============
 
 dd                  delete (cut) a line
@@ -106,7 +109,7 @@ P                   put (paste) before cursor/current line
 :set paste          avoid unexpected effects in pasting
 
 
-Registers
+REGISTERS
 =========
 :reg                list all registers
 "c                  register 'c'
@@ -116,7 +119,7 @@ Registers
 "%                  filepath
 
 
-Macros
+MACROS
 ======
 
 qa                  start recording macro 'a'
@@ -125,7 +128,7 @@ q                   end recording macro
 @:                  replay last command
 
 
-Visual mode - MARKING TEXT
+VISUAL MODE - MARKING TEXT
 ==========================
 
 v                   start visual mode, mark lines, then do command (such as y-yank)
@@ -142,7 +145,7 @@ ib                  inner {} block
 Esc                 exit visual mode
 
 
-Visual mode - COMMANDS
+VISUAL MODE - COMMANDS
 ======================
 
 >                   shift right
@@ -153,7 +156,7 @@ d                   delete marked text
 ~                   switch case
 
 
-Spelling
+SPELLING
 ========
 
 ]s                  next misspelled word
@@ -163,7 +166,7 @@ zug                 undo last add word
 z=                  suggest word
 
 
-Exiting
+EXITING
 =======
 
 :w                  write (save) the file, but don't exit
