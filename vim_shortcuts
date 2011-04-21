@@ -214,7 +214,7 @@ CTRL-w l            right window
 CTRL-w +            larger window
 CTRL-w -            smaller window
 CTRL-w =            equal window
-CTRL-o              close other windows
+CTRL-w o            close other windows
 
 
 PROGRAMMING
