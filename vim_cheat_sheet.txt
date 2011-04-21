@@ -211,10 +211,9 @@ MULTIPLE FILES
 ==============
 
 :e filename         Edit a file in a new buffer
-:n **/*.pl          Open all perl files under the current directory, recursively
 :tabe filename      Edit a file in a new tab (Vim7, gVim)
-:bnext (or :bn)     go to next buffer
-:bprev (or :bp)     go to previous buffer
+:bn                 go to next buffer
+:bp                 go to previous buffer
 :bd                 delete a buffer (close a file)
 
 
