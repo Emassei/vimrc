@@ -25,9 +25,13 @@ B                   jump backward by words (no punctuation)
 0                   (zero) start of line
 ^                   first non-blank character of line
 $                   end of line
+-                   move line upwards, on the first non blank character
++                   move line downwards, on the first non blank character
+<enter>             move line downwards, on the first non blank character
 gg                  go to first line
 G                   go to last line
 nG                  go To line n
+:n                  go To line n
 )                   move the cursor forward to the next sentence.
 (                   move the cursor backward by a sentence.
 {                   move the cursor a paragraph backwards
@@ -210,11 +214,14 @@ N                   repeat search in opposite direction
 MULTIPLE FILES
 ==============
 
-:e filename         Edit a file in a new buffer
-:tabe filename      Edit a file in a new tab (Vim7, gVim)
+:e filename         edit a file in a new buffer
+:tabe filename      edit a file in a new tab (Vim7, gVim)
+:ls                 list all buffers
 :bn                 go to next buffer
 :bp                 go to previous buffer
 :bd                 delete a buffer (close a file)
+:b1                 show buffer 1
+:b vimrc            show buffer whose filename begins with "vimrc"
 
 
 WINDOWS
@@ -354,8 +361,8 @@ u                   move tree root up a dir
 U                   move tree root up a dir but leave old root open
 r                   refresh cursor dir
 R                   refresh current root
-m                   Show menu
-cd                  hange the CWD to the selected dir
+m                   show menu
+cd                  change the CWD to the selected dir
 
 Tree filtering
 --------------
@@ -366,8 +373,8 @@ B                   bookmarks
 
 Other
 -----
-q                   Close the NERDTree window
-A                   Zoom (maximize-minimize) the NERDTree window
+q                   close the NERDTree window
+A                   zoom (maximize-minimize) the NERDTree window
 ?                   toggle help
 
 
