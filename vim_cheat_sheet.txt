@@ -64,7 +64,7 @@ i                   start insert mode at cursor
 I                   insert at the beginning of the line
 a                   append after the cursor
 A                   append at the end of the line
-o                   open (append) blank line below current line (no need to press return)
+o                   open (append) blank line below current line
 O                   open blank line above current line
 Esc                 exit insert mode
 
@@ -405,7 +405,7 @@ cs({                change surrounding parens to braces with space
 ds'                 delete surrounding quotes
 dst                 delete surrounding tags
 ysiw[               surround inner word with brackets
-vees'               surround 2 words (ee) with quote
+vees'               surround 2 words (ee) with quotes '
 
 
 TABULAR (plugin)
@@ -561,4 +561,4 @@ Sources / inspiration :
 - http://jmcpherson.org/editing.html
 - http://cheat.errtheblog.com/s/vim/
 - http://cheat.errtheblog.com/s/vim_anders/
-
+- http://www.fprintf.net/vimCheatSheet.html
