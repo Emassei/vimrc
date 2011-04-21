@@ -449,8 +449,8 @@ UNIMPAIRED (plugin)
 ]space              new line below
 [e                  exchange line above
 ]e                  exchange line below
-[o                  XML encode
-]o                  XML decode (with htmlentities)
+[x                  XML encode
+]x                  XML decode (with htmlentities)
 
 
 
