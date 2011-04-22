@@ -9,6 +9,7 @@
 *  GENERAL  *
 *************
 
+
 CURSOR MOVEMENT
 ===============
 
@@ -164,7 +165,6 @@ Esc                 exit visual mode
 
 Visual mode commands
 --------------------
-
 >                   shift right
 <                   shift left
 c                   change (replace) marked text
@@ -318,6 +318,7 @@ NERDTREE (plugin)
 
 :NERDTreeToggle     show / hide file browser
 :NERDTreeFind       show current file in file browser
+:Bookmark name      bookmark the current node as "name"
 
 File
 ----
@@ -443,12 +444,16 @@ UNIMPAIRED (plugin)
 VIM-FUGITIVE (plugin)
 =====================
 
-:Gstatus            git status
+:Git                run a git command
+:Gstatus            git status : - to (un)stage , p to patch, C to commit
 :Gcommit            git commit
-:Glog               git log
-:Gdiff              perform a vimdiff against the current file of a certain revision
+:Gread              empty the buffer and revert to the last commit
+:Gwrite             write the current file and stage the results
 :Gmove              git mv
 :Gremove            git rm
+:Glog               git log
+:Gdiff              perform a vimdiff against the current file of a certain revision
+:Gblame             open blame information in a scroll bound vertical splitt
 :Gbrowse            open github
 
 
@@ -562,7 +567,7 @@ CTRL-y              go to next tag of attribute in sparkup plugin
 CREDITS
 -------
 
-Sources / inspiration : 
+this cheat sheet is based upon :
 
 - http://www.keyxl.com/aaa8263/290/VIM-keyboard-shortcuts.htm
 - http://jmcpherson.org/editing.html

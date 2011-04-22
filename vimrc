@@ -331,6 +331,7 @@ ab "= " ========================================================================
 let NERDChristmasTree=1
 let NERDTreeChDirMode=2
 let NERDTreeQuitOnOpen=1
+let NERDTreeIgnore=['\.DS_Store', '^Icon']
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 nmap <silent> <leader>N :NERDTreeClose<CR>
 nmap <silent> <leader>f :NERDTreeFind<CR>
