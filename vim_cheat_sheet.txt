@@ -561,6 +561,8 @@ CTRL-y              go to next tag of attribute in sparkup plugin
 
 <leader>g           toggle Gundo window
 
+b                   insert image tag with dimensions from NERDTree 
+                    (http://stackoverflow.com/questions/5707925/vim-image-placement)
 
 
 
