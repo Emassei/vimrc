@@ -85,3 +85,6 @@
 	path = bundle/PDV
 	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
 	ignore = untracked 
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:groenewege/nerdtree.git
