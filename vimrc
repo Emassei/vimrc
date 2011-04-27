@@ -226,7 +226,14 @@ nnoremap <silent> <leader>tj g<C-]>
 nnoremap <silent> <leader>stj <C-w>g<C-]>
 
 " Open omnicomplete menu
-inoremap <silent> <C-space> <C-x><C-o>
+" inoremap <silent> <C-space> <C-x><C-o>
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+\ "\<lt>C-n>" :
+\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
 
 " Quickly close the current window
 nnoremap <silent> <leader>q :q<CR>
@@ -423,6 +430,19 @@ let g:gist_open_browser_after_post = 1
 
 nmap <Leader>rc <Plug>RefreshColorScheme
 
+
+" ============================================================================== 
+" HTML5.vim settings
+" ============================================================================== 
+
+" Disable event-handler attributes support
+let g:event_handler_attributes_complete = 0
+" Disable RDFa attributes support
+let g:rdfa_attributes_complete = 0
+" Disable microdata attributes support
+let g:microdata_attributes_complete = 0
+" Disable WAI-ARIA attribute support
+let g:aria_attributes_complete = 0
 
 " ==============================================================================
 " GUI

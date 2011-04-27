@@ -66,3 +66,5 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 * [Vim-symfony](https://github.com/soh335/vim-symfony/wiki): Improve your symfony project
 
 * [Vim-twig](https://github.com/beyondwords/vim-twig): Twig syntax highlighting, snipMate, etc.
+
+* [html5](http://www.vim.org/scripts/script.php?script_id=3236): HTML5 omnicomplete funtion and syntax for Vim 
