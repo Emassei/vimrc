@@ -23,6 +23,7 @@ e                   jump to end of words (punctuation considered words)
 E                   jump to end of words (no punctuation)
 b                   jump backward by words (punctuation considered words)
 B                   jump backward by words (no punctuation)
+ge                  jump backward to end of words
 0                   (zero) start of line
 ^                   first non-blank character of line
 $                   end of line
@@ -201,14 +202,17 @@ ZQ                  quit current file and exit (same as ":q!").
 SEARCH/REPLACE
 ==============
 
-/pattern            search for pattern
-?pattern            search backward for pattern
-n                   repeat search in same direction
-N                   repeat search in opposite direction
-*                   Search forward, word under cursor
-#                   Search backward, word under cursor
-:%s/old/new/g       replace all old with new throughout file
-:%s/old/new/gc      replace all old with new throughout file with confirmations
+/pattern                    search for pattern
+?pattern                    search backward for pattern
+n                           repeat search in same direction
+N                           repeat search in opposite direction
+*                           search forward, word under cursor
+#                           search backward, word under cursor
+:%s/old/new/g               replace all old with new throughout file
+:%s/old/new/gc              replace all old with new throughout file with confirmation
+:argdo %s/old/new/gc | wq   open multiple files and run this command to replace old 
+                            with new in every file with confirmation, save and quit
+
 
 
 MULTIPLE FILES
