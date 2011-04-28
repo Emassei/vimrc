@@ -31,6 +31,8 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [HexHighlight](http://www.vim.org/scripts/script.php?script_id=2937): Plugin to highlight hex codes in gvim
 
+* [Html5](http://www.vim.org/scripts/script.php?script_id=3236): HTML5 omnicomplete funtion and syntax for Vim 
+
 * [LustyJuggler](http://www.vim.org/scripts/script.php?script_id=2050): LustyJuggler is a high speed buffer switcher.
 
 * [Nerd Commenter](http://www.vim.org/scripts/script.php?script_id=1218): A plugin that allows for easy commenting of code for many filetypes. 
@@ -67,4 +69,3 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [Vim-twig](https://github.com/beyondwords/vim-twig): Twig syntax highlighting, snipMate, etc.
 
-* [html5](http://www.vim.org/scripts/script.php?script_id=3236): HTML5 omnicomplete funtion and syntax for Vim 
