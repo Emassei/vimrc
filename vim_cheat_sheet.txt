@@ -519,6 +519,8 @@ CTRL-l              go to right window
 <leader>cd          change directory to parent dir of current file
 ##                  will expand to webroot
 
+<F2>                toggle wrapped text
+<F3>                toggle spell check
 <F4>                toggle light/dark background
 
 <F5>                underline with dashes

@@ -142,6 +142,7 @@ set clipboard=unnamed           " share with system clipboard
 set nospell
 set spelllang=en,fr
 set spellsuggest=5
+map <F3> :set nospell!<CR>
 
 " ==============================================================================
 " Highlighting
@@ -260,6 +261,7 @@ vmap <leader><Down> xp`[V`]
 
 " wrap text
 command! -nargs=* Wrap set wrap linebreak nolist
+map <F2> :set nowrap! <CR>
 
 " Easy window navigation
 map <C-h> <C-w>h
