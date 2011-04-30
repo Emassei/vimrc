@@ -139,8 +139,8 @@ set clipboard=unnamed           " share with system clipboard
 " Spelling
 " ============================================================================== 
 
+set nospell
 set spelllang=en,fr
-set spell
 set spellsuggest=5
 
 " ==============================================================================
@@ -354,11 +354,11 @@ nmap <silent> <leader>f :NERDTreeFind<CR>
 nmap <silent> <leader>l :TlistToggle<CR>
 nmap <silent> <leader>L :TlistClose<CR>
 " TagListTagName - Used for tag names
-highlight MyTagListTagName gui=italic guifg=#f92672 guibg=#ffffff
+highlight MyTagListTagName gui=italic guifg=#dc322f guibg=#ffffff
 " TagListTitle - Used for tag titles
-highlight MyTagListTitle gui=italic guifg=#333333 guibg=#fd971f
+highlight MyTagListTitle gui=italic guifg=#333333 guibg=#cb4b16
 " TagListFileName - Used for filenames
-highlight MyTagListFileName gui=bold guifg=#000000 guibg=#a6e22e
+highlight MyTagListFileName gui=bold guifg=#000000 guibg=#859900
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
