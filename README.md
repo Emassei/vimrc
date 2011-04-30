@@ -47,6 +47,8 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540): TextMate-style snippets for Vim
 
+* [Solarized](http://ethanschoonover.com/solarized): Precision colorscheme for the vim text editor
+
 * [Sparkup](https://github.com/rstacruz/sparkup): A parser for a condensed HTML format, inspired by Zen coding.
 
 * [Surround](http://www.vim.org/scripts/script.php?script_id=1697): Delete/change/add parentheses/quotes/XML-tags/much more with ease.

@@ -392,6 +392,12 @@ nmap <silent> <leader>ph :set filetype=php.html<CR>
 " Shortcut for reloading snippets, useful when developing
 nnoremap <silent> <leader>r <esc>:exec ReloadAllSnippets()<cr>
 
+" ==============================================================================
+" delimitMate settings
+" ============================================================================== 
+
+let delimitMate_excluded_ft = "vim,markdown"
+
 
 " ==============================================================================
 " Lusty-Jugller settings
