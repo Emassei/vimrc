@@ -148,8 +148,11 @@ set spellsuggest=5
 " ==============================================================================
 
 if &t_Co >= 256 || has("gui_running")
-  let g:molokai_original = 1
-  colorscheme molokai
+"  let g:molokai_original = 1
+"  colorscheme molokai
+  set background=dark
+  colorscheme solarized
+  call togglebg#map("<F4>")
 endif
 
 if &t_Co > 2 || has("gui_running")
