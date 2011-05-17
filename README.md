@@ -57,6 +57,8 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [Unimpaired](http://www.vim.org/scripts/script.php?script_id=1590): Pairs of handy bracket mappings . (empty lines, duplicate lines, encode/decode)
 
+* [Vim-css-color](https://github.com/skammer/vim-css-color): Highlight colors in css files.
+
 * [Vim-Fugitive](http://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper so awesome, it should be illegal.
 
 * [Vim-markdown-preview](https://github.com/nelstrom/vim-markdown-preview): preview markdown documents in the browser from vim
