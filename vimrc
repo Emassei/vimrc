@@ -396,8 +396,9 @@ nnoremap <silent> <leader>r <esc>:exec ReloadAllSnippets()<cr>
 " delimitMate settings
 " ============================================================================== 
 
-let delimitMate_excluded_ft = "vim,markdown"
-
+" let delimitMate_excluded_ft = "vim,markdown"
+" disable delimitMate
+let loaded_delimitMate = 1
 
 " ==============================================================================
 " Lusty-Jugller settings
