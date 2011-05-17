@@ -92,6 +92,3 @@
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 	ignore = untracked 
-[submodule "bundle/vim-css-color"]
-	path = bundle/vim-css-color
-	url = git@github.com:groenewege/vim-css-color.git
