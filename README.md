@@ -29,8 +29,6 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [Gundo](http://sjl.bitbucket.org/gundo.vim/): Graph your Vim undo tree in style
 
-* [HexHighlight](http://www.vim.org/scripts/script.php?script_id=2937): Plugin to highlight hex codes in gvim
-
 * [Html5](http://www.vim.org/scripts/script.php?script_id=3236): HTML5 omnicomplete funtion and syntax for Vim 
 
 * [LustyJuggler](http://www.vim.org/scripts/script.php?script_id=2050): LustyJuggler is a high speed buffer switcher.
@@ -58,6 +56,8 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 * [Taglist](http://vim.sourceforge.net/scripts/script.php?script_id=273): Source code browser
 
 * [Unimpaired](http://www.vim.org/scripts/script.php?script_id=1590): Pairs of handy bracket mappings . (empty lines, duplicate lines, encode/decode)
+
+* [Vim-css-color](https://github.com/skammer/vim-css-color): Highlight colors in css files.
 
 * [Vim-Fugitive](http://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper so awesome, it should be illegal.
 
