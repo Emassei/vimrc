@@ -94,4 +94,5 @@
 	ignore = untracked 
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
-	url = git@github.com:groenewege/vim-css-color.git
+	url = https://github.com/skammer/vim-css-color.git
+	ignore = untracked 
