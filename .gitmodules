@@ -96,3 +96,6 @@
 	path = bundle/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
 	ignore = untracked 
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = git@github.com:groenewege/vim-less.git

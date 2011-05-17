@@ -61,6 +61,8 @@ Fork me on GITHUB  https://github.com/groenewege/vimrc
 
 * [Vim-Fugitive](http://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper so awesome, it should be illegal.
 
+* [Vim-less](https://github.com/groenewege/vim-less): vim syntax for LESS (dynamic CSS).
+
 * [Vim-markdown-preview](https://github.com/nelstrom/vim-markdown-preview): preview markdown documents in the browser from vim
 
 * [Vim-markdown](https://github.com/tpope/vim-markdown): Vim Markdown runtime files
