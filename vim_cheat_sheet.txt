@@ -298,12 +298,6 @@ GUNDO (plugin)
 :GundoToggle        show undo tree
 
 
-HEXHIGHLIGHT (plugin)
-=====================
-
-<Leader>F2          show hex code highlighting
-
-
 LUSTYJUGGLER (plugin)
 =====================
 
