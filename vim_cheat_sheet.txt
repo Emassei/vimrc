@@ -248,6 +248,18 @@ CTRL-w =            equal window
 CTRL-w o            close other windows
 
 
+QUICKFIX WINDOW
+===============
+
+copen               open quickfix window
+cclose              close quickfix window
+cc [nr]             display error [nr]
+cfirst              display the first error
+clast               display the last error
+[count]cn           display [count] next error
+[count]cp           display [count] previous error
+
+
 PROGRAMMING
 ===========
 
@@ -437,6 +449,10 @@ UNIMPAIRED (plugin)
 ]e                  exchange line below
 [x                  XML encode
 ]x                  XML decode (with htmlentities)
+[q                  jump to previous quickfix item
+]q                  jump to next quickfix item
+[Q                  jump to first quickfix item
+]Q                  jump to last quickfix item
 
 
 VIM-FUGITIVE (plugin)
