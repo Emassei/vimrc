@@ -152,6 +152,10 @@ if &t_Co >= 256 || has("gui_running")
 "  let g:molokai_original = 1
 "  colorscheme molokai
   set background=dark
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+  let g:solarized_contrast="high"
+  let g:solarized_visibility="high"
   colorscheme solarized
   call togglebg#map("<F4>")
 endif
