@@ -18,6 +18,7 @@ set nocompatible
 filetype off                    " force reloading *after* pathogen loaded
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+call pathogen#infect()
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Change the mapleader from \ to ,
